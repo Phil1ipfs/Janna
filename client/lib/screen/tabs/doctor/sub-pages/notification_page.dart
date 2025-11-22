@@ -35,7 +35,7 @@ class _NotificationPageState extends State<NotificationPage> {
 
       // 🌐 API call to backend using Bearer token in Authorization header
       final response = await http.get(
-        Uri.parse("http://localhost:5000/api/notifications"),
+        Uri.parse("http://10.0.2.2:5000/api/notifications"),
         headers: {
           "Content-Type": "application/json",
           "Authorization": "Bearer $token", // ✅ Add Bearer token

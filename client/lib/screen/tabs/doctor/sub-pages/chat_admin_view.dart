@@ -17,7 +17,7 @@
 //   final TextEditingController _messageController = TextEditingController();
 //   final ImagePicker _picker = ImagePicker();
 
-//   static const String baseUrl = "http://localhost:5000/api";
+//   static const String baseUrl = "http://10.0.2.2:5000/api";
 
 //   final List<Map<String, dynamic>> _messages = [];
 //   bool _isOnline = true;
@@ -405,7 +405,7 @@ class ChatAdminView extends StatefulWidget {
 class _ChatAdminViewState extends State<ChatAdminView> {
   final TextEditingController _messageController = TextEditingController();
   final ImagePicker _picker = ImagePicker();
-  static const String baseUrl = "http://localhost:5000/api";
+  static const String baseUrl = "http://10.0.2.2:5000/api";
 
   final List<Map<String, dynamic>> _messages = [];
   bool _isOnline = true;

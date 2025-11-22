@@ -79,7 +79,7 @@ class _EditClientProfileState extends State<EditClientProfile> {
       };
 
       final response = await http.put(
-        Uri.parse('http://localhost:5000/api/clients/profile'),
+        Uri.parse('http://10.0.2.2:5000/api/clients/profile'),
         headers: {
           'Authorization': 'Bearer $token',
           'Content-Type': 'application/json',

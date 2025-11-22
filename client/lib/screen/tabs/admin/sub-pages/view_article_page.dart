@@ -33,7 +33,7 @@
 
 //     try {
 //       final response = await http.get(
-//         Uri.parse('http://localhost:5000/api/articles/${widget.articleId}'),
+//         Uri.parse('http://10.0.2.2:5000/api/articles/${widget.articleId}'),
 //         headers: {
 //           'Content-Type': 'application/json',
 //           'Cache-Control': 'no-cache',
@@ -68,7 +68,7 @@
 //     final token = prefs.getString('token');
 
 //     final response = await http.delete(
-//       Uri.parse('http://localhost:5000/api/articles/comment/$commentId'),
+//       Uri.parse('http://10.0.2.2:5000/api/articles/comment/$commentId'),
 //       headers: {'Authorization': '$token'},
 //     );
 
@@ -110,7 +110,7 @@
 
 //     try {
 //       final response = await http.post(
-//         Uri.parse('http://localhost:5000/api/articles/comment'),
+//         Uri.parse('http://10.0.2.2:5000/api/articles/comment'),
 //         headers: {
 //           'Content-Type': 'application/json',
 //           'Authorization': 'Bearer $token',
@@ -174,7 +174,7 @@
 //       }
 
 //       final response = await http.delete(
-//         Uri.parse('http://localhost:5000/api/articles/${widget.articleId}'),
+//         Uri.parse('http://10.0.2.2:5000/api/articles/${widget.articleId}'),
 //         headers: {
 //           'Content-Type': 'application/json',
 //           'Authorization': 'Bearer $token',
@@ -551,7 +551,7 @@ class _ViewArticleScreenState extends State<ViewArticleScreen> {
 
     try {
       final response = await http.get(
-        Uri.parse('http://localhost:5000/api/articles/${widget.articleId}'),
+        Uri.parse('http://10.0.2.2:5000/api/articles/${widget.articleId}'),
         headers: {
           'Content-Type': 'application/json',
           'Cache-Control': 'no-cache',
@@ -585,7 +585,7 @@ class _ViewArticleScreenState extends State<ViewArticleScreen> {
     final token = prefs.getString('token');
 
     final response = await http.delete(
-      Uri.parse('http://localhost:5000/api/articles/comment/$commentId'),
+      Uri.parse('http://10.0.2.2:5000/api/articles/comment/$commentId'),
       headers: {'Authorization': '$token'},
     );
 
@@ -627,7 +627,7 @@ class _ViewArticleScreenState extends State<ViewArticleScreen> {
 
     try {
       final response = await http.post(
-        Uri.parse('http://localhost:5000/api/articles/comment'),
+        Uri.parse('http://10.0.2.2:5000/api/articles/comment'),
         headers: {
           'Content-Type': 'application/json',
           'Authorization': 'Bearer $token',
@@ -691,7 +691,7 @@ class _ViewArticleScreenState extends State<ViewArticleScreen> {
       }
 
       final response = await http.delete(
-        Uri.parse('http://localhost:5000/api/articles/${widget.articleId}'),
+        Uri.parse('http://10.0.2.2:5000/api/articles/${widget.articleId}'),
         headers: {
           'Content-Type': 'application/json',
           'Authorization': 'Bearer $token',

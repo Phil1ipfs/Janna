@@ -38,7 +38,7 @@
 //       }
 
 //       final response = await http.get(
-//         Uri.parse("http://localhost:5000/api/auth/profile"),
+//         Uri.parse("http://10.0.2.2:5000/api/auth/profile"),
 //         headers: {"Authorization": "Bearer $token"},
 //       );
 
@@ -214,7 +214,7 @@
 //       if (token == null) throw Exception('Token not found');
 
 //       final uri = Uri.parse(
-//         'http://localhost:5000/api/auth/change-profile-picture',
+//         'http://10.0.2.2:5000/api/auth/change-profile-picture',
 //       );
 //       final request = http.MultipartRequest('PUT', uri)
 //         ..headers['Authorization'] = 'Bearer $token';
@@ -556,7 +556,7 @@ class _ClientProfileState extends State<ClientProfile> {
       }
 
       final response = await http.get(
-        Uri.parse("http://localhost:5000/api/auth/profile"),
+        Uri.parse("http://10.0.2.2:5000/api/auth/profile"),
         headers: {"Authorization": "Bearer $token"},
       );
 
@@ -733,7 +733,7 @@ class _ClientProfileState extends State<ClientProfile> {
       if (token == null) throw Exception('Token not found');
 
       final uri = Uri.parse(
-        'http://localhost:5000/api/auth/change-profile-picture',
+        'http://10.0.2.2:5000/api/auth/change-profile-picture',
       );
       final request = http.MultipartRequest('PUT', uri)
         ..headers['Authorization'] = 'Bearer $token';

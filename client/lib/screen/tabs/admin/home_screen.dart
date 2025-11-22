@@ -28,7 +28,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   // 🔹 Fetch event stats for graph
   Future<Map<int, int>> fetchEventStats(int year) async {
-    final url = Uri.parse('http://localhost:5000/api/events/stats/$year');
+    final url = Uri.parse('http://10.0.2.2:5000/api/events/stats/$year');
     final response = await http.get(url);
 
     if (response.statusCode == 200) {
@@ -48,7 +48,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   // 🔹 Fetch appointment stats for graph
   Future<Map<int, int>> fetchAppointmentStats(int year) async {
-    final url = Uri.parse('http://localhost:5000/api/appointments/stats/$year');
+    final url = Uri.parse('http://10.0.2.2:5000/api/appointments/stats/$year');
     final response = await http.get(url);
 
     if (response.statusCode == 200) {
@@ -74,7 +74,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
     if (token == null) return;
 
-    final url = Uri.parse('http://localhost:5000/api/dashboard/counts');
+    final url = Uri.parse('http://10.0.2.2:5000/api/dashboard/counts');
     final response = await http.get(
       url,
       headers: {
@@ -96,7 +96,7 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
   Future<List<Map<String, dynamic>>> fetchUpcomingEvents() async {
-    final url = Uri.parse('http://localhost:5000/api/events/upcoming');
+    final url = Uri.parse('http://10.0.2.2:5000/api/events/upcoming');
     final response = await http.get(url);
 
     if (response.statusCode == 200) {
@@ -718,7 +718,7 @@ class _HomeScreenState extends State<HomeScreen> {
       text.isNotEmpty ? '${text[0].toUpperCase()}${text.substring(1)}' : text;
 
   Future<Map<String, dynamic>> fetchDoctorStats() async {
-    final url = Uri.parse('http://localhost:5000/api/doctors/stats');
+    final url = Uri.parse('http://10.0.2.2:5000/api/doctors/stats');
     final response = await http.get(url);
 
     if (response.statusCode == 200) {
@@ -729,7 +729,7 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
   Future<Map<String, dynamic>> fetchEventStatsDetails() async {
-    final url = Uri.parse('http://localhost:5000/api/events/stats-2');
+    final url = Uri.parse('http://10.0.2.2:5000/api/events/stats-2');
     final response = await http.get(url);
 
     if (response.statusCode == 200) {
@@ -744,7 +744,7 @@ class _HomeScreenState extends State<HomeScreen> {
     final prefs = await SharedPreferences.getInstance();
     final token = prefs.getString('token');
 
-    final url = Uri.parse('http://localhost:5000/api/messages/stats');
+    final url = Uri.parse('http://10.0.2.2:5000/api/messages/stats');
     final response = await http.get(
       url,
       headers: {'Authorization': 'Bearer $token'},

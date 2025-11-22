@@ -36,7 +36,7 @@ class _DoctorArticlesState extends State<DoctorArticles> {
     final prefs = await SharedPreferences.getInstance();
     final token = prefs.getString('token');
 
-    String url = 'http://localhost:5000/api/articles/by-like';
+    String url = 'http://10.0.2.2:5000/api/articles/by-like';
     if (slug != null && slug.isNotEmpty) {
       url = '$url?slug=$slug';
     }
@@ -65,7 +65,7 @@ class _DoctorArticlesState extends State<DoctorArticles> {
   // ✅ Fetch available topics (slugs)
   Future<void> fetchTopics() async {
     final response = await http.get(
-      Uri.parse('http://localhost:5000/api/articles/slugs/list'),
+      Uri.parse('http://10.0.2.2:5000/api/articles/slugs/list'),
       headers: {'Content-Type': 'application/json'},
     );
 
@@ -85,7 +85,7 @@ class _DoctorArticlesState extends State<DoctorArticles> {
     final token = prefs.getString('token');
 
     final response = await http.get(
-      Uri.parse('http://localhost:5000/api/articles/by-like?q=$query'),
+      Uri.parse('http://10.0.2.2:5000/api/articles/by-like?q=$query'),
       headers: {'Content-Type': 'application/json', 'Authorization': '$token'},
     );
 
@@ -112,7 +112,7 @@ class _DoctorArticlesState extends State<DoctorArticles> {
     final articleId = articles[index]['article_id'];
 
     final response = await http.post(
-      Uri.parse('http://localhost:5000/api/articles/like'),
+      Uri.parse('http://10.0.2.2:5000/api/articles/like'),
       headers: {'Content-Type': 'application/json', 'Authorization': '$token'},
       body: jsonEncode({'article_id': articleId}),
     );
@@ -139,7 +139,7 @@ class _DoctorArticlesState extends State<DoctorArticles> {
     final articleId = articles[index]['article_id'];
 
     final response = await http.post(
-      Uri.parse('http://localhost:5000/api/articles/comment'),
+      Uri.parse('http://10.0.2.2:5000/api/articles/comment'),
       headers: {
         'Content-Type': 'application/json',
         'Authorization': 'Bearer $token',

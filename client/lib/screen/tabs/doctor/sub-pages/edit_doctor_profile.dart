@@ -80,11 +80,11 @@ class _EditDoctorProfileState extends State<EditDoctorProfile> {
     super.dispose();
   }
 
-  // Uses the updated API endpoint: http://localhost:5000/api/dropdown/fields
+  // Uses the updated API endpoint: http://10.0.2.2:5000/api/dropdown/fields
   Future<void> _fetchSpecialties() async {
     try {
       final response = await http.get(
-        Uri.parse("http://localhost:5000/api/dropdown/fields"),
+        Uri.parse("http://10.0.2.2:5000/api/dropdown/fields"),
       );
 
       if (response.statusCode == 200) {
@@ -152,7 +152,7 @@ class _EditDoctorProfileState extends State<EditDoctorProfile> {
       };
 
       final response = await http.put(
-        Uri.parse("http://localhost:5000/api/doctors/profile"),
+        Uri.parse("http://10.0.2.2:5000/api/doctors/profile"),
         headers: {
           "Authorization": "Bearer $token",
           "Content-Type": "application/json",

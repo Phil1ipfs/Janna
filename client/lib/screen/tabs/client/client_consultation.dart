@@ -33,7 +33,7 @@ class _ClientConsultationState extends State<ClientConsultation> {
         return;
       }
 
-      final url = Uri.parse("http://localhost:5000/api/appointments/client");
+      final url = Uri.parse("http://10.0.2.2:5000/api/appointments/client");
       final response = await http.get(
         url,
         headers: {
@@ -386,7 +386,7 @@ class _ClientConsultationState extends State<ClientConsultation> {
       if (token == null) return;
 
       final url = Uri.parse(
-        "http://localhost:5000/api/appointments/$appointmentId/ongoing",
+        "http://10.0.2.2:5000/api/appointments/$appointmentId/ongoing",
       );
       final response = await http.put(
         url,
@@ -416,7 +416,7 @@ class _ClientConsultationState extends State<ClientConsultation> {
       if (token == null) return;
 
       final url = Uri.parse(
-        "http://localhost:5000/api/appointments/$appointmentId/complete",
+        "http://10.0.2.2:5000/api/appointments/$appointmentId/complete",
       );
       final response = await http.put(
         url,
@@ -446,7 +446,7 @@ class _ClientConsultationState extends State<ClientConsultation> {
       if (token == null) return;
 
       final url = Uri.parse(
-        "http://localhost:5000/api/appointments/$appointmentId/cancel",
+        "http://10.0.2.2:5000/api/appointments/$appointmentId/cancel",
       );
       final response = await http.put(
         url,

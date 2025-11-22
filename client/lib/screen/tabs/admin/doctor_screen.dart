@@ -72,7 +72,7 @@
 //   String _filterStatus = 'All';
 
 //   // Replace with your API URL
-//   final String apiUrl = 'http://localhost:5000/api/doctors/all';
+//   final String apiUrl = 'http://10.0.2.2:5000/api/doctors/all';
 
 //   @override
 //   void initState() {
@@ -356,7 +356,7 @@ class _DoctorScreenState extends State<DoctorScreen> {
   String _searchQuery = '';
   String _filterStatus = 'All';
 
-  final String apiUrl = 'http://localhost:5000/api/doctors/all'; // 🔹 Your API
+  final String apiUrl = 'http://10.0.2.2:5000/api/doctors/all'; // 🔹 Your API
 
   @override
   void initState() {

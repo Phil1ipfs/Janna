@@ -79,7 +79,7 @@ class _EditAdminProfileState extends State<EditAdminProfile> {
       };
 
       final response = await http.put(
-        Uri.parse('http://localhost:5000/api/admins/profile'),
+        Uri.parse('http://10.0.2.2:5000/api/admins/profile'),
         headers: {
           'Authorization': 'Bearer $token',
           'Content-Type': 'application/json',

@@ -18,7 +18,7 @@ class ConsultationScreenState extends State<ConsultationScreen> {
   bool _loading = true;
   int? _adminUserId; // Store admin's user_id
 
-  static const String baseUrl = "http://localhost:5000/api"; // Backend URL
+  static const String baseUrl = "http://10.0.2.2:5000/api"; // Backend URL
 
   @override
   void initState() {

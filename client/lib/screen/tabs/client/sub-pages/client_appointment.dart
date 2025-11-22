@@ -42,7 +42,7 @@ class _ClientAppointmentPageState extends State<ClientAppointmentPage> {
 
   Future<void> fetchDoctors() async {
     try {
-      final url = Uri.parse("http://localhost:5000/api/dropdown/doctors");
+      final url = Uri.parse("http://10.0.2.2:5000/api/dropdown/doctors");
       final response = await http.get(url);
 
       if (response.statusCode == 200) {
@@ -74,7 +74,7 @@ class _ClientAppointmentPageState extends State<ClientAppointmentPage> {
     final doctorId = selectedDoctor!['doctor_id'];
     final date = DateFormat('yyyy-MM-dd').format(selectedDate!);
     final url = Uri.parse(
-      "http://localhost:5000/api/doctors/available-times?doctor_id=$doctorId&date=$date",
+      "http://10.0.2.2:5000/api/doctors/available-times?doctor_id=$doctorId&date=$date",
     );
 
     try {
@@ -153,7 +153,7 @@ class _ClientAppointmentPageState extends State<ClientAppointmentPage> {
     };
 
     try {
-      final url = Uri.parse("http://localhost:5000/api/appointments");
+      final url = Uri.parse("http://10.0.2.2:5000/api/appointments");
       final response = await http.post(
         url,
         headers: {

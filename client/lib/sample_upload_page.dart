@@ -39,7 +39,7 @@ class _SampleUploadPageState extends State<SampleUploadPage> {
     if (kIsWeb && _webImage == null) return;
 
     setState(() => _isUploading = true);
-    const apiUrl = "http://localhost:5000/api/upload"; // adjust as needed
+    const apiUrl = "http://10.0.2.2:5000/api/upload"; // adjust as needed
 
     try {
       var request = http.MultipartRequest('POST', Uri.parse(apiUrl));
