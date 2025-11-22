@@ -1,9 +1,10 @@
 const DBConfig = require("../config/db.config.js");
 const Sequelize = require("sequelize");
 
-const sequelize = new Sequelize(DBConfig.DB, DBConfig.USER, DBConfig.PASSWORD, {
-	host: DBConfig.HOST,
+// Use connection URI format which handles DNS resolution better
+const sequelize = new Sequelize(DBConfig.URI, {
 	dialect: DBConfig.dialect,
+	dialectOptions: DBConfig.dialectOptions,
 	pool: DBConfig.pool,
 	logging: false,
 	operatorAliases: false,

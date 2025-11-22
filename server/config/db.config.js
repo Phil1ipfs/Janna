@@ -18,8 +18,9 @@ if (isDevelopment) {
 } else {
 	// Use Supabase for production deployment
 	console.log("🚀 Production mode: Using Supabase database");
+	// Use hostname from .env or fallback to Supabase host
 	dbHost = process.env.DB_HOST || "db.mxfuvioxlsnegqbczsjm.supabase.co";
-	DB_PORT = process.env.DB_PORT || 5432;
+	DB_PORT = process.env.DB_PORT || 6543; // Connection pooling port
 	DB_NAME = process.env.DB_NAME || "postgres";
 	DB_USER = process.env.DB_USER || "postgres";
 	DB_PASSWORD = process.env.DB_PASSWORD || "Karldarn25!";
@@ -31,12 +32,19 @@ console.log(`📊 Database: ${DB_NAME}, User: ${DB_USER}`);
 
 const sslEnabled = DB_SSL === "true";
 
+// Build connection URI for better DNS resolution
+// For connection pooling (port 6543), add pgbouncer parameter
+const encodedPassword = encodeURIComponent(DB_PASSWORD);
+const poolerParam = DB_PORT === 6543 ? "?pgbouncer=true" : "";
+const connectionUri = `postgresql://${DB_USER}:${encodedPassword}@${dbHost}:${DB_PORT}/${DB_NAME}${poolerParam}`;
+
 module.exports = {
 	HOST: dbHost,
 	USER: DB_USER,
 	PASSWORD: DB_PASSWORD,
 	DB: DB_NAME,
 	PORT: DB_PORT,
+	URI: connectionUri, // Add URI for connection string format
 	dialect: "postgres",
 	dialectOptions: sslEnabled
 		? {
