@@ -14,7 +14,10 @@ require("dotenv").config();
 exports.createEvent = async (req, res) => {
 	try {
 		const { title, date, time, description, location, status } = req.body;
-		const image = req.file ? req.file.path : null;
+		// ✅ Store relative URL path instead of absolute file path
+		const image = req.file ? `/uploads/events/${req.file.filename}` : null;
+
+		console.log("Creating event with image:", image); // ✅ Better logging
 
 		if (!title || !date || !time) {
 			return res

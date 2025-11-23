@@ -3,12 +3,13 @@ const app = express();
 require("dotenv").config();
 const cors = require("cors");
 const dns = require("dns");
+const path = require("path");
 
 // Configure DNS to use Google DNS for better resolution
 dns.setServers(["8.8.8.8", "8.8.4.4", "1.1.1.1"]);
 // Force IPv4 first (though Supabase may only have IPv6)
-process.env.NODE_OPTIONS = process.env.NODE_OPTIONS ? 
-	`${process.env.NODE_OPTIONS} --dns-result-order=ipv4first` : 
+process.env.NODE_OPTIONS = process.env.NODE_OPTIONS ?
+	`${process.env.NODE_OPTIONS} --dns-result-order=ipv4first` :
 	"--dns-result-order=ipv4first";
 
 const PORT = process.env.PORT;
@@ -17,6 +18,9 @@ const db = require("./models/index.js");
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+
+// ✅ Serve uploaded files statically
+app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 
 db.sequelize
 	.sync({ alter: true })
@@ -43,6 +47,16 @@ app.use("/api/clients", require("./routes/client.routes.js"));
 app.use("/api/admins", require("./routes/admin.routes.js"));
 app.use("/api/dashboard", require("./routes/dashboard.routes.js"));
 app.use("/api/notifications", require("./routes/notification.routes.js"));
+
+// ✅ Global error handler - returns JSON instead of HTML
+app.use((err, req, res, next) => {
+	console.error("Global error handler:", err);
+	res.status(err.status || 500).json({
+		success: false,
+		message: err.message || "Internal server error",
+		error: process.env.NODE_ENV === "production" ? {} : err.stack
+	});
+});
 
 app.listen(PORT, '0.0.0.0', () => {
 	console.log(`Server is running on port ${PORT}`);

@@ -6,6 +6,11 @@ services:
     plan: free
     buildCommand: cd server && npm install
     startCommand: cd server && npm start
+    # ✅ Persistent disk to store uploaded files
+    disk:
+      name: uploads-disk
+      mountPath: /opt/render/project/src/server/uploads
+      sizeGB: 1
     envVars:
       - key: NODE_ENV
         value: production
