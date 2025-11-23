@@ -53,7 +53,7 @@
 //   Map<String, dynamic>? _rawProfileData;
 //   bool _isLoading = true;
 
-//   final String apiUrl = 'http://10.0.2.2:5000/api/auth/profile';
+//   final String apiUrl = 'https://janna-server.onrender.com/api/auth/profile';
 
 //   @override
 //   void initState() {
@@ -280,7 +280,7 @@
 //       if (token.isEmpty) throw Exception('Token not found');
 
 //       final uri = Uri.parse(
-//         'http://10.0.2.2:5000/api/auth/change-profile-picture',
+//         'https://janna-server.onrender.com/api/auth/change-profile-picture',
 //       );
 //       final request = http.MultipartRequest('PUT', uri)
 //         ..headers['Authorization'] = 'Bearer $token';
@@ -592,7 +592,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
   Profile? _profile;
   Map<String, dynamic>? _rawProfileData;
   bool _isLoading = true;
-  final String apiUrl = 'http://10.0.2.2:5000/api/auth/profile';
+  final String apiUrl = 'https://janna-server.onrender.com/api/auth/profile';
 
   @override
   void initState() {
@@ -793,7 +793,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
       if (token.isEmpty) throw Exception('Token not found');
 
       final uri = Uri.parse(
-        'http://10.0.2.2:5000/api/auth/change-profile-picture',
+        'https://janna-server.onrender.com/api/auth/change-profile-picture',
       );
       final request = http.MultipartRequest('PUT', uri)
         ..headers['Authorization'] = 'Bearer $token';

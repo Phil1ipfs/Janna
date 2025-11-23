@@ -33,7 +33,7 @@ class _DoctorConsultationState extends State<DoctorConsultation> {
         return;
       }
 
-      final url = Uri.parse("http://10.0.2.2:5000/api/appointments/doctor");
+      final url = Uri.parse("https://janna-server.onrender.com/api/appointments/doctor");
       final response = await http.get(
         url,
         headers: {

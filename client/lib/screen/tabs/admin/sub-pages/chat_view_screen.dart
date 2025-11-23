@@ -27,7 +27,7 @@ class _ChatViewScreenState extends State<ChatViewScreen> {
   final ImagePicker _picker = ImagePicker();
 
   // Replace with your server address (use IP if on emulator/device)
-  static const String baseUrl = "http://10.0.2.2:5000/api";
+  static const String baseUrl = "https://janna-server.onrender.com/api";
 
   final List<Map<String, dynamic>> _messages = [];
   bool _showProfile = false;

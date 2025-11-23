@@ -65,12 +65,12 @@ plugins {
 }
 
 android {
-    namespace = "com.myriad.client"
+    namespace = "com.janna.health"
     compileSdk = flutter.compileSdkVersion
     ndkVersion = flutter.ndkVersion
 
     defaultConfig {
-        applicationId = "com.myriad.client"
+        applicationId = "com.janna.health"
         minSdk = flutter.minSdkVersion
         targetSdk = flutter.targetSdkVersion
         versionCode = flutter.versionCode

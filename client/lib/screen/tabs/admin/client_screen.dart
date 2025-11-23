@@ -107,7 +107,7 @@ class _ClientScreenState extends State<ClientScreen> {
   bool _isLoading = true;
   String _searchQuery = '';
 
-  final String apiUrl = 'http://10.0.2.2:5000/api/clients/all';
+  final String apiUrl = 'https://janna-server.onrender.com/api/clients/all';
 
   @override
   void initState() {

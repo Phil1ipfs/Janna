@@ -32,7 +32,7 @@ class _ClientHomeState extends State<ClientHome> {
       final token = prefs.getString('token');
 
       final res = await http.get(
-        Uri.parse('http://10.0.2.2:5000/api/clients/dashboard'),
+        Uri.parse('https://janna-server.onrender.com/api/clients/dashboard'),
         headers: {'Authorization': 'Bearer $token'},
       );
 
@@ -374,7 +374,7 @@ class _ClientHomeState extends State<ClientHome> {
     final prefs = await SharedPreferences.getInstance();
     final token = prefs.getString('token');
     final response = await http.get(
-      Uri.parse('http://10.0.2.2:5000/api/events/stats-2'),
+      Uri.parse('https://janna-server.onrender.com/api/events/stats-2'),
       headers: {'Authorization': 'Bearer $token'},
     );
 
@@ -398,7 +398,7 @@ class _ClientHomeState extends State<ClientHome> {
     final prefs = await SharedPreferences.getInstance();
     final token = prefs.getString('token');
     final response = await http.get(
-      Uri.parse('http://10.0.2.2:5000/api/appointments/client'),
+      Uri.parse('https://janna-server.onrender.com/api/appointments/client'),
       headers: {'Authorization': 'Bearer $token'},
     );
 
@@ -424,7 +424,7 @@ class _ClientHomeState extends State<ClientHome> {
     final prefs = await SharedPreferences.getInstance();
     final token = prefs.getString('token');
     final response = await http.get(
-      Uri.parse('http://10.0.2.2:5000/api/messages/stats'),
+      Uri.parse('https://janna-server.onrender.com/api/messages/stats'),
       headers: {'Authorization': 'Bearer $token'},
     );
 

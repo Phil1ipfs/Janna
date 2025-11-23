@@ -4,7 +4,7 @@ import 'package:http/http.dart' as http;
 import 'package:shared_preferences/shared_preferences.dart';
 
 class EventService {
-  static const String baseUrl = 'http://10.0.2.2:5000/api';
+  static const String baseUrl = 'https://janna-server.onrender.com/api';
 
   // 🗑️ Delete event
   static Future<bool> deleteEvent(int eventId) async {
@@ -91,7 +91,7 @@ class EventService {
     required String eventDescription,
   }) async {
     try {
-      final uri = Uri.parse('http://10.0.2.2:5000/api/auth/users/with-roles');
+      final uri = Uri.parse('https://janna-server.onrender.com/api/auth/users/with-roles');
       final response = await http.get(uri);
 
       if (response.statusCode == 200) {

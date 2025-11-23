@@ -48,7 +48,7 @@ class _DoctorAvailabilityScreenState extends State<DoctorAvailabilityScreen> {
     try {
       final formattedDate = DateFormat('yyyy-MM-dd').format(selectedDate!);
       final url = Uri.parse(
-        'http://10.0.2.2:5000/api/doctors/availability?date=$formattedDate',
+        'https://janna-server.onrender.com/api/doctors/availability?date=$formattedDate',
       );
 
       final prefs = await SharedPreferences.getInstance();
@@ -91,7 +91,7 @@ class _DoctorAvailabilityScreenState extends State<DoctorAvailabilityScreen> {
       }
 
       final formattedDate = DateFormat('yyyy-MM-dd').format(selectedDate!);
-      final url = Uri.parse('http://10.0.2.2:5000/api/doctors/availability');
+      final url = Uri.parse('https://janna-server.onrender.com/api/doctors/availability');
 
       final body = jsonEncode({
         "date": formattedDate,
@@ -128,7 +128,7 @@ class _DoctorAvailabilityScreenState extends State<DoctorAvailabilityScreen> {
       final token = prefs.getString('token') ?? '';
       print(id);
       final url = Uri.parse(
-        'http://10.0.2.2:5000/api/doctors/availability/$id',
+        'https://janna-server.onrender.com/api/doctors/availability/$id',
       );
 
       final response = await http.delete(
@@ -155,7 +155,7 @@ class _DoctorAvailabilityScreenState extends State<DoctorAvailabilityScreen> {
       final token = prefs.getString('token') ?? '';
 
       final url = Uri.parse(
-        'http://10.0.2.2:5000/api/doctors/availability/$id/unavailable',
+        'https://janna-server.onrender.com/api/doctors/availability/$id/unavailable',
       );
 
       final response = await http.put(

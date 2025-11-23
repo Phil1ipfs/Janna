@@ -25,7 +25,7 @@ class _DoctorHomeState extends State<DoctorHome> {
     final token = prefs.getString('token');
     if (token == null) throw Exception("Authorization token not found.");
 
-    const String apiUrl = "http://10.0.2.2:5000/api/doctors/dashboard";
+    const String apiUrl = "https://janna-server.onrender.com/api/doctors/dashboard";
 
     final response = await http.get(
       Uri.parse(apiUrl),
@@ -710,7 +710,7 @@ class _DoctorHomeState extends State<DoctorHome> {
     final token = prefs.getString('token');
 
     final response = await http.get(
-      Uri.parse('http://10.0.2.2:5000/api/messages/stats'),
+      Uri.parse('https://janna-server.onrender.com/api/messages/stats'),
       headers: {
         'Authorization': 'Bearer $token',
         'Content-Type': 'application/json',
@@ -729,7 +729,7 @@ class _DoctorHomeState extends State<DoctorHome> {
     final token = prefs.getString('token');
 
     final response = await http.get(
-      Uri.parse('http://10.0.2.2:5000/api/events/stats-2'),
+      Uri.parse('https://janna-server.onrender.com/api/events/stats-2'),
       headers: {
         'Authorization': 'Bearer $token',
         'Content-Type': 'application/json',
@@ -748,7 +748,7 @@ class _DoctorHomeState extends State<DoctorHome> {
     final token = prefs.getString('token');
 
     final response = await http.get(
-      Uri.parse('http://10.0.2.2:5000/api/appointments/stats'),
+      Uri.parse('https://janna-server.onrender.com/api/appointments/stats'),
       headers: {
         'Authorization': 'Bearer $token',
         'Content-Type': 'application/json',

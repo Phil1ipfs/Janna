@@ -45,7 +45,7 @@
 //       return;
 //     }
 
-//     final url = Uri.parse('http://10.0.2.2:5000/api/articles');
+//     final url = Uri.parse('https://janna-server.onrender.com/api/articles');
 //     final response = await http.post(
 //       url,
 //       headers: {'Content-Type': 'application/json'},
@@ -254,7 +254,7 @@ class _AddArticleScreenState extends State<AddArticleScreen> {
       final imageBytes = _coverImageBytes ?? await _getDefaultImageBytes();
 
       // 🌐 Create multipart request
-      final url = Uri.parse('http://10.0.2.2:5000/api/articles');
+      final url = Uri.parse('https://janna-server.onrender.com/api/articles');
       final request = http.MultipartRequest('POST', url)
         ..fields['title'] = title
         ..fields['slug'] = slug

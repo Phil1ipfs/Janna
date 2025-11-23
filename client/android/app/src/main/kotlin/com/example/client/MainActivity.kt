@@ -1,4 +1,4 @@
-package com.myriad.client
+package com.janna.health
 
 import io.flutter.embedding.android.FlutterActivity
 

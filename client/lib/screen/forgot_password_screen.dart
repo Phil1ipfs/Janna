@@ -35,7 +35,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
 
     try {
       final response = await http.post(
-        Uri.parse("http://10.0.2.2:5000/api/auth/send-forgot-otp"),
+        Uri.parse("https://janna-server.onrender.com/api/auth/send-forgot-otp"),
         headers: {"Content-Type": "application/json"},
         body: jsonEncode({"email": _emailController.text.trim()}),
       );
@@ -100,7 +100,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
 
     try {
       final response = await http.post(
-        Uri.parse("http://10.0.2.2:5000/api/auth/verify-forgot-otp"),
+        Uri.parse("https://janna-server.onrender.com/api/auth/verify-forgot-otp"),
         headers: {"Content-Type": "application/json"},
         body: jsonEncode({
           "email": _emailController.text.trim(),
@@ -141,7 +141,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
 
     try {
       final response = await http.put(
-        Uri.parse("http://10.0.2.2:5000/api/auth/reset-password"),
+        Uri.parse("https://janna-server.onrender.com/api/auth/reset-password"),
         headers: {"Content-Type": "application/json"},
         body: jsonEncode({
           "token": token,

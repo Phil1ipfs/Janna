@@ -33,7 +33,7 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
       if (token == null) return;
 
       final response = await http.post(
-        Uri.parse("http://10.0.2.2:5000/api/auth/send-otp"),
+        Uri.parse("https://janna-server.onrender.com/api/auth/send-otp"),
         headers: {
           "Content-Type": "application/json",
           "Authorization": "Bearer $token",
@@ -111,7 +111,7 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
       if (token == null) throw Exception("No token found.");
 
       final response = await http.post(
-        Uri.parse("http://10.0.2.2:5000/api/auth/verify-otp"),
+        Uri.parse("https://janna-server.onrender.com/api/auth/verify-otp"),
         headers: {
           "Content-Type": "application/json",
           "Authorization": "Bearer $token",
@@ -151,7 +151,7 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
       if (token == null) throw Exception("No token found.");
 
       final response = await http.put(
-        Uri.parse("http://10.0.2.2:5000/api/auth/change-password"),
+        Uri.parse("https://janna-server.onrender.com/api/auth/change-password"),
         headers: {
           "Content-Type": "application/json",
           "Authorization": "Bearer $token",

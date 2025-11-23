@@ -34,7 +34,7 @@ class _ArticleScreenState extends State<ArticleScreen> {
   Future<void> fetchArticles() async {
     try {
       final res = await http.get(
-        Uri.parse('http://10.0.2.2:5000/api/articles'),
+        Uri.parse('https://janna-server.onrender.com/api/articles'),
       );
       if (res.statusCode == 200) {
         final List<dynamic> articles = json.decode(res.body);
@@ -54,7 +54,7 @@ class _ArticleScreenState extends State<ArticleScreen> {
   Future<void> getArticleById(BuildContext context, int id) async {
     try {
       final res = await http.get(
-        Uri.parse('http://10.0.2.2:5000/api/articles/$id'),
+        Uri.parse('https://janna-server.onrender.com/api/articles/$id'),
       );
       if (res.statusCode == 200) {
         final article = json.decode(res.body);
